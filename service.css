@@ -86,6 +86,14 @@
   margin-bottom: 3.25rem;
 }
 
+.service-hero-actions .btn-outline-dark{
+  background-color: var(--primary);
+}
+
+.service-hero-actions .btn-outline-dark .btn-text{
+  color: var(--primary-light);
+}
+
 /* Metrics Row */
 .service-hero-metrics {
   display: flex;

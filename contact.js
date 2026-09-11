@@ -206,7 +206,7 @@ if (typeof gsap !== "undefined") {
     aquifer: {
       protocol: "Protocol: ISO-14064-HYD",
       status: "Direct Uplink Active",
-      photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+      photo: "./assets/boy 3.webp",
       role: "Chief Hydrological Architect",
       name: "Tariq Mansoor",
       tenure: "Direct Field Tenure: 5 Years",
@@ -222,7 +222,7 @@ if (typeof gsap !== "undefined") {
     biovault: {
       protocol: "Protocol: UNCBD-BIO-2026",
       status: "Vault Chamber Calibrated",
-      photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
+      photo: "./assets/girl 4.webp",
       role: "Chief Ecology Scientist",
       name: "Dr. Aris Thorne",
       tenure: "Direct Field Tenure: 8 Years",
@@ -238,7 +238,7 @@ if (typeof gsap !== "undefined") {
     landtrust: {
       protocol: "Protocol: FAO-CIVIC-TITLING",
       status: "Audited Ledger Synced",
-      photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+      photo: "./assets/girl 9.webp",
       role: "Director of Community Land Trusts",
       name: "Elena Vance",
       tenure: "Direct Field Tenure: 6 Years",
@@ -254,7 +254,7 @@ if (typeof gsap !== "undefined") {
     emergency: {
       protocol: "Protocol: UN-OCHA-48H",
       status: "Rapid Contingency Primed",
-      photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+      photo: "./assets/boy 19.webp",
       role: "Rapid Logistics Commander",
       name: "Marcus Sterling",
       tenure: "Direct Field Tenure: 7 Years",
@@ -341,8 +341,8 @@ if (typeof gsap !== "undefined") {
       document.getElementById("metricSub4").textContent = data.m4.sub;
 
       document.getElementById("actionCopy").textContent = data.copy;
-      document.getElementById("actionPrimaryBtn").href = `mailto:${data.email}`;
-      document.getElementById("actionSecondaryBtn").href = `tel:${data.phone.replace(/[^0-9+]/g, "")}`;
+      document.getElementById("actionPrimaryBtn").href = 'error.html';
+      document.getElementById("actionSecondaryBtn").href = 'error.html';
 
       // Micro fade-in
       targets.forEach((el) => {

@@ -116,6 +116,14 @@
   margin-bottom: 3.25rem;
 }
 
+.contact-hero-actions .btn-outline-dark{
+  background-color: var(--primary);
+}
+
+.contact-hero-actions .btn-outline-dark .btn-text{
+  color: var(--primary-light);
+}
+
 /* Metrics Row */
 .contact-hero-metrics {
   display: flex;

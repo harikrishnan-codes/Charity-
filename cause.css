@@ -115,6 +115,14 @@
   margin-bottom: 3.25rem;
 }
 
+.causes-intro-actions .btn-outline-dark {
+  background-color: var(--secondary);
+}
+
+.causes-intro-actions .btn-outline-dark .btn-text{
+  color: var(--primary-light);
+}
+
 /* Metric Counter Strip */
 .causes-intro-metrics {
   display: flex;
