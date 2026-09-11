@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Kindred Charity</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" href="./assets/logo.webp">
+    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="error.css">
+
+</head>
+
+<body>
+
+    <main class="error-page-wrapper">
+        <div class="error-aurora-glow glow-1"></div>
+        <div class="error-aurora-glow glow-2"></div>
+
+        <div class="error-content-card">
+            <div class="error-visual">
+                <span class="digit digit-left">4</span>
+                <div class="compass-orb">
+                    <div class="orb-ring ring-outer"></div>
+                    <div class="orb-ring ring-inner"></div>
+                    <div class="orb-core">
+                        <i class="fa-solid fa-compass compass-needle"></i>
+                    </div>
+                </div>
+                <span class="digit digit-right">4</span>
+            </div>
+
+            <div class="error-badge">
+                <span class="badge-dot"></span>
+                <span class="badge-text">Lost Path Found</span>
+            </div>
+
+            <h1 class="error-title">A Detour in the Journey</h1>
+
+            <p class="error-description">
+                The destination you are seeking might have moved or retired, but the journey to bring light and shelter
+                to those in need never ceases.
+            </p>
+
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-primary">
+                    <span class="btn-text">Return Home</span>
+                    <span class="btn-icon-wrapper">
+                        <svg class="svg-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+                        </svg>
+                    </span>
+                </a>
+
+                <a href="javascript:history.back()" class="btn btn-secondary">
+                    <span class="btn-text">Go Back</span>
+                    <span class="btn-icon-wrapper">
+                        <svg class="svg-heart" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                    </span>
+                </a>
+            </div>
+
+            <div class="quick-assist">
+                <span class="quick-title">Helpful Destinations</span>
+                <div class="quick-pills">
+                    <a href="about.html" class="pill-link"><i class="fa-solid fa-users"></i> Our Story</a>
+                    <a href="service.html" class="pill-link"><i class="fa-solid fa-seedling"></i> Missions</a>
+                    <a href="contact.html" class="pill-link"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof gsap !== "undefined") {
+                const tl = gsap.timeline({defaults: {ease: "power3.out"}});
+
+                tl.fromTo(
+                    ".error-content-card",
+                    {opacity: 0, y: 35, scale: 0.95},
+                    {opacity: 1, y: 0, scale: 1, duration: 0.9}
+                )
+                    .fromTo(
+                        ".digit-left",
+                        {opacity: 0, x: -40},
+                        {opacity: 1, x: 0, duration: 0.7},
+                        "-=0.6"
+                    )
+                    .fromTo(
+                        ".compass-orb",
+                        {opacity: 0, scale: 0.2},
+                        {opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)"},
+                        "-=0.5"
+                    )
+                    .fromTo(
+                        ".digit-right",
+                        {opacity: 0, x: 40},
+                        {opacity: 1, x: 0, duration: 0.7},
+                        "-=0.6"
+                    )
+                    .fromTo(
+                        ".error-badge",
+                        {opacity: 0, y: -15},
+                        {opacity: 1, y: 0, duration: 0.5},
+                        "-=0.4"
+                    )
+                    .fromTo(
+                        ".error-title",
+                        {opacity: 0, y: 20},
+                        {opacity: 1, y: 0, duration: 0.6},
+                        "-=0.3"
+                    )
+                    .fromTo(
+                        ".error-description",
+                        {opacity: 0, y: 20},
+                        {opacity: 1, y: 0, duration: 0.6},
+                        "-=0.4"
+                    )
+                    .fromTo(
+                        ".error-actions .btn",
+                        {opacity: 0, y: 20},
+                        {opacity: 1, y: 0, stagger: 0.15, duration: 0.6},
+                        "-=0.4"
+                    )
+                    .fromTo(
+                        ".quick-assist",
+                        {opacity: 0, y: 15},
+                        {opacity: 1, y: 0, duration: 0.6},
+                        "-=0.3"
+                    );
+            }
+        });
+    </script>
+</body>
+
+</html>

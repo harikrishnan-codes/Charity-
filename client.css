@@ -1,0 +1,19 @@
+/* ==========================================================================
+   76. CLIENT CONSOLE THEMING OVERRIDES
+   ========================================================================== */
+
+.profile-avatar.client-avatar {
+  background-color: var(--accent, #E8A838);
+  color: #0F172A;
+}
+
+.topbar-status-chip.client-chip {
+  background-color: #FEF3E2;
+  border-color: rgba(232, 168, 56, 0.35);
+  color: #92540C;
+}
+
+.status-ping-dot.client-dot {
+  background-color: var(--accent, #E8A838);
+  box-shadow: 0 0 0 3px rgba(232, 168, 56, 0.25);
+}

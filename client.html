@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client & Donor Stewardship Console | EarthTrust</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="root.css" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="client.css" />
+
+
+
+</head>
+<body class="dashboard-body">
+
+  <!-- Mobile Backdrop Overlay for Background Scroll Lock -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <div class="dashboard-layout">
+    
+    <!-- ================================================================= -->
+    <!-- CLIENT SIDEBAR NAVIGATION (Desktop Sticky / Mobile Drawer)       -->
+    <!-- ================================================================= -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div class="sidebar-header">
+        <a href="error.html" class="sidebar-brand">
+          <div class="brand-icon-box">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <div class="brand-text-stack">
+            <span class="brand-title">EarthTrust</span>
+            <span class="brand-sub">Donor Console</span>
+          </div>
+        </a>
+        <!-- Close icon visible inside mobile drawer -->
+        <button type="button" class="mobile-drawer-close" id="drawerCloseBtn" aria-label="Close navigation drawer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Client Profile Badge Displaying Logged-in Email -->
+      <div class="sidebar-profile-card">
+        <div class="profile-avatar client-avatar">
+          <i class="fa-solid fa-user-check"></i>
+        </div>
+        <div class="profile-details">
+          <span class="profile-role">Registered Donor</span>
+          <span class="profile-email-badge" id="clientSidebarDisplayEmail">client@earthtrust.org</span>
+        </div>
+      </div>
+
+      <!-- Tab Navigation Menu Links -->
+      <nav class="sidebar-nav">
+        <span class="nav-section-label">Stewardship Ledger</span>
+        <ul class="nav-menu-list">
+          <li>
+            <button type="button" class="dash-nav-btn is-active" data-view="client-view-portfolio">
+              <i class="fa-solid fa-chart-line"></i>
+              <span>My Impact Portfolio</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dash-nav-btn" data-view="client-view-sponsored">
+              <i class="fa-solid fa-droplet"></i>
+              <span>Sponsored Projects</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dash-nav-btn" data-view="client-view-receipts">
+              <i class="fa-solid fa-receipt"></i>
+              <span>Tax Receipts & Audits</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dash-nav-btn" data-view="client-view-reports">
+              <i class="fa-solid fa-tower-broadcast"></i>
+              <span>Live Ground Dispatches</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dash-nav-btn" data-view="client-view-preferences">
+              <i class="fa-solid fa-sliders"></i>
+              <span>Disbursement Settings</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Sidebar Footer Action -->
+      <div class="sidebar-footer">
+        <a href="auth.html" class="btn-sidebar-action">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Sign Out Portal</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ================================================================= -->
+    <!-- MAIN CLIENT DASHBOARD WORKSPACE                                   -->
+    <!-- ================================================================= -->
+    <main class="dashboard-main">
+      
+      <!-- Top Navigation Bar -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <!-- Hamburger Button for Mobile -->
+          <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation drawer" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+
+          <div class="breadcrumb-stack">
+            <span class="breadcrumb-parent">Donor Workspace</span>
+            <h1 class="breadcrumb-active" id="clientViewHeaderTitle">My Impact Portfolio</h1>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="topbar-status-chip client-chip">
+            <span class="status-ping-dot client-dot"></span>
+            <span>86.4% Ground Ratio Verified</span>
+          </div>
+
+          <!-- Logged-in User Email Container -->
+          <div class="user-pill-container">
+            <div class="user-pill-icon">
+              <i class="fa-regular fa-envelope"></i>
+            </div>
+            <span class="user-pill-email" id="clientTopbarDisplayEmail">client@earthtrust.org</span>
+          </div>
+
+          <a href="error.html" class="topbar-action-btn" title="Donation Receipts">
+            <i class="fa-regular fa-bell"></i>
+          </a>
+        </div>
+      </header>
+
+      <!-- Content Views Stage -->
+      <div class="dashboard-content-body">
+
+        <!-- ============================================================= -->
+        <!-- VIEW 1: MY IMPACT PORTFOLIO (INITIAL ACTIVE STATE)            -->
+        <!-- ============================================================= -->
+        <section class="dashboard-view is-active" id="client-view-portfolio">
+          
+          <!-- Key Donor Stats -->
+          <div class="dash-metrics-grid">
+            <article class="metric-glass-card">
+              <div class="metric-icon-wrap icon-emerald">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+              </div>
+              <div class="metric-info-col">
+                <span class="metric-caption">Cumulative Pledges</span>
+                <strong class="metric-figure">$24,850</strong>
+                <span class="metric-delta positive"><i class="fa-solid fa-shield-check"></i> 100% Tax Deducted</span>
+              </div>
+            </article>
+
+            <article class="metric-glass-card">
+              <div class="metric-icon-wrap icon-amber">
+                <i class="fa-solid fa-faucet-drip"></i>
+              </div>
+              <div class="metric-info-col">
+                <span class="metric-caption">Clean Water Yielded</span>
+                <strong class="metric-figure">186,000 L</strong>
+                <span class="metric-delta positive"><i class="fa-solid fa-check"></i> 2 Solar Pumps Funded</span>
+              </div>
+            </article>
+
+            <article class="metric-glass-card">
+              <div class="metric-icon-wrap icon-emerald">
+                <i class="fa-solid fa-tree"></i>
+              </div>
+              <div class="metric-info-col">
+                <span class="metric-caption">Saplings Under Custody</span>
+                <strong class="metric-figure">1,420 Trees</strong>
+                <span class="metric-delta positive"><i class="fa-solid fa-leaf"></i> 94.2% Survival Ratio</span>
+              </div>
+            </article>
+
+            <article class="metric-glass-card">
+              <div class="metric-icon-wrap icon-coral">
+                <i class="fa-solid fa-fingerprint"></i>
+              </div>
+              <div class="metric-info-col">
+                <span class="metric-caption">Zero Intermediary SLA</span>
+                <strong class="metric-figure">0.00%</strong>
+                <span class="metric-delta neutral"><i class="fa-solid fa-link"></i> Direct Ledger Routed</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- Active Pledges Table Tile -->
+          <div class="dash-panel-tile">
+            <div class="panel-tile-header">
+              <div>
+                <h2 class="panel-tile-title">Active Field Deployments Funded by You</h2>
+                <p class="panel-tile-subtitle">Cryptographic tracking connecting your capital to physical hardware on the ground.</p>
+              </div>
+              <a href="error.html" class="btn btn-secondary btn-sm">
+                <span class="btn-text">Pledge New Corridor</span>
+                <span class="btn-icon-wrapper"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+
+            <div class="table-responsive-wrapper">
+              <table class="dash-data-table">
+                <thead>
+                  <tr>
+                    <th>Mission Initiative</th>
+                    <th>Frontline Sector</th>
+                    <th>My Contribution</th>
+                    <th>Current Project Completion</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="table-col-main">
+                        <strong class="item-title">Southern Basin Aquifer Array</strong>
+                        <span class="item-tag">Submersible Solar Hardware</span>
+                      </div>
+                    </td>
+                    <td>Eastern Rift Valley</td>
+                    <td>$12,500 USD</td>
+                    <td>
+                      <div class="table-progress-wrap">
+                        <div class="table-progress-bar" style="width: 82%;"></div>
+                        <span class="progress-val">82%</span>
+                      </div>
+                    </td>
+                    <td>
+                      <a href="error.html" class="table-action-link">Telemetry Feed <i class="fa-solid fa-angle-right"></i></a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="table-col-main">
+                        <strong class="item-title">Highland Native Canopy Vaults</strong>
+                        <span class="item-tag">Broadleaf Germplasm Nursery</span>
+                      </div>
+                    </td>
+                    <td>Southern Highlands</td>
+                    <td>$6,850 USD</td>
+                    <td>
+                      <div class="table-progress-wrap">
+                        <div class="table-progress-bar" style="width: 68%;"></div>
+                        <span class="progress-val">68%</span>
+                      </div>
+                    </td>
+                    <td>
+                      <a href="error.html" class="table-action-link">Telemetry Feed <i class="fa-solid fa-angle-right"></i></a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="table-col-main">
+                        <strong class="item-title">Alpine Pediatric Clinic Inoculations</strong>
+                        <span class="item-tag">Cold-Chain Vaccine Run</span>
+                      </div>
+                    </td>
+                    <td>Inland Escarpment</td>
+                    <td>$5,500 USD</td>
+                    <td>
+                      <div class="table-progress-wrap">
+                        <div class="table-progress-bar" style="width: 90%;"></div>
+                        <span class="progress-val">90%</span>
+                      </div>
+                    </td>
+                    <td>
+                      <a href="error.html" class="table-action-link">Telemetry Feed <i class="fa-solid fa-angle-right"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- VIEW 2: SPONSORED PROJECTS                                    -->
+        <!-- ============================================================= -->
+        <section class="dashboard-view" id="client-view-sponsored">
+          <div class="dash-panel-tile">
+            <div class="panel-tile-header">
+              <div>
+                <h2 class="panel-tile-title">Detailed Sponsorship Records</h2>
+                <p class="panel-tile-subtitle">Independent engineer inspections, village council resolutions, and satellite coordinates.</p>
+              </div>
+              <a href="error.html" class="btn btn-outline-dark btn-sm">Download Impact Dossier</a>
+            </div>
+
+            <div class="cadres-grid">
+              <div class="cadre-card">
+                <div class="cadre-avatar">
+                  <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=400&q=80" alt="Wellhead installation" />
+                </div>
+                <h3 class="cadre-name">Submersible Rig #04</h3>
+                <span class="cadre-role">Status: Flowing Daily</span>
+                <span class="cadre-loc"><i class="fa-solid fa-location-dot"></i> Lat: -0.3116, Lon: 36.2411</span>
+                <a href="error.html" class="btn btn-secondary btn-sm">Inspect Real-Time Hydro Log</a>
+              </div>
+
+              <div class="cadre-card">
+                <div class="cadre-avatar">
+                  <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=400&q=80" alt="Seedling germination" />
+                </div>
+                <h3 class="cadre-name">Canopy Seed Bank #12</h3>
+                <span class="cadre-role">Status: Hardening Phase</span>
+                <span class="cadre-loc"><i class="fa-solid fa-location-dot"></i> Lat: -8.7377, Lon: 34.8697</span>
+                <a href="error.html" class="btn btn-secondary btn-sm">Inspect Real-Time Hydro Log</a>
+              </div>
+
+              <div class="cadre-card">
+                <div class="cadre-avatar">
+                  <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=400&q=80" alt="Medical clinic" />
+                </div>
+                <h3 class="cadre-name">Mobile Health Unit #01</h3>
+                <span class="cadre-role">Status: In Route</span>
+                <span class="cadre-loc"><i class="fa-solid fa-location-dot"></i> Lat: -3.3691, Lon: 37.3122</span>
+                <a href="error.html" class="btn btn-secondary btn-sm">Inspect Real-Time Hydro Log</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- VIEW 3: TAX RECEIPTS & AUDITS                                 -->
+        <!-- ============================================================= -->
+        <section class="dashboard-view" id="client-view-receipts">
+          <div class="dash-panel-tile">
+            <div class="panel-tile-header">
+              <div>
+                <h2 class="panel-tile-title">Cryptographic Tax Receipts & 501(c)(3) Filings</h2>
+                <p class="panel-tile-subtitle">Legally enforceable tax certificates with SHA-256 ledger integrity hashes.</p>
+              </div>
+              <a href="error.html" class="btn btn-secondary btn-sm">Download Annual Tax Pack</a>
+            </div>
+
+            <div class="audit-block-stack">
+              <div class="audit-entry-card">
+                <div class="audit-entry-top">
+                  <span class="audit-hash">Doc Ref: ET-2026-TAX-0881</span>
+                  <span class="audit-badge-verified"><i class="fa-solid fa-circle-check"></i> 501(c)(3) Validated</span>
+                </div>
+                <h3 class="audit-entry-headline">2026 Q2 Frontline Capital Contribution Certificate</h3>
+                <p class="audit-entry-desc">Covers cumulative gifts of $12,500.00 USD dedicated to Southern Basin clean water deployments.</p>
+                <div class="audit-entry-footer">
+                  <span>Deductible Amount: <strong>$12,500.00 USD</strong></span>
+                  <a href="error.html" class="table-action-link">Download PDF Docket <i class="fa-solid fa-download"></i></a>
+                </div>
+              </div>
+
+              <div class="audit-entry-card">
+                <div class="audit-entry-top">
+                  <span class="audit-hash">Doc Ref: ET-2026-TAX-0419</span>
+                  <span class="audit-badge-verified"><i class="fa-solid fa-circle-check"></i> 501(c)(3) Validated</span>
+                </div>
+                <h3 class="audit-entry-headline">2026 Q1 Bio-Vault Endemic Seeding Trust Filing</h3>
+                <p class="audit-entry-desc">Covers contribution of $12,350.00 USD for highland forest germination nurseries.</p>
+                <div class="audit-entry-footer">
+                  <span>Deductible Amount: <strong>$12,350.00 USD</strong></span>
+                  <a href="error.html" class="table-action-link">Download PDF Docket <i class="fa-solid fa-download"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- VIEW 4: LIVE GROUND DISPATCHES                                -->
+        <!-- ============================================================= -->
+        <section class="dashboard-view" id="client-view-reports">
+          <div class="dash-panel-tile">
+            <div class="panel-tile-header">
+              <div>
+                <h2 class="panel-tile-title">Field Dispatches from Regional Trustees</h2>
+                <p class="panel-tile-subtitle">Direct field transmissions and inspection photographs filed by resident municipal leaders.</p>
+              </div>
+              <a href="error.html" class="btn btn-outline-dark btn-sm">Subscribe to RSS Ledger</a>
+            </div>
+
+            <div class="telemetry-log-deck">
+              <div class="telemetry-log-row">
+                <span class="telemetry-timestamp"><i class="fa-regular fa-clock"></i> 4 Hours Ago</span>
+                <span class="telemetry-badge-online"><i class="fa-solid fa-check"></i> Hydro Verified</span>
+                <strong class="telemetry-unit">Tariq Mansoor filed Inspection Log #18</strong>
+                <span class="telemetry-reading">“Solar pump installation achieved 42,000L/hr continuous flow without turbidity.”</span>
+                <a href="error.html" class="btn-micro-action"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+
+              <div class="telemetry-log-row">
+                <span class="telemetry-timestamp"><i class="fa-regular fa-clock"></i> Yesterday</span>
+                <span class="telemetry-badge-online"><i class="fa-solid fa-check"></i> Bio Certified</span>
+                <strong class="telemetry-unit">Dr. Aris Thorne filed Nursery Report #42</strong>
+                <span class="telemetry-reading">“Batch 48 broadleaf saplings cleared their root hardening stage across 64 plots.”</span>
+                <a href="error.html" class="btn-micro-action"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+
+              <div class="telemetry-log-row">
+                <span class="telemetry-timestamp"><i class="fa-regular fa-clock"></i> 3 Days Ago</span>
+                <span class="telemetry-badge-online"><i class="fa-solid fa-check"></i> Clinic Verified</span>
+                <strong class="telemetry-unit">Dr. Kaelen Cruz completed Valley Clinic Run</strong>
+                <span class="telemetry-reading">“Completed 800 pediatric vaccinations with unbroken cold-chain refrigeration.”</span>
+                <a href="error.html" class="btn-micro-action"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- VIEW 5: DISBURSEMENT SETTINGS                                 -->
+        <!-- ============================================================= -->
+        <section class="dashboard-view" id="client-view-preferences">
+          <div class="dash-panel-tile">
+            <div class="panel-tile-header">
+              <div>
+                <h2 class="panel-tile-title">Automated Allocation Rules & Preferences</h2>
+                <p class="panel-tile-subtitle">Configure autonomous recurring gifts, sector preferences, and anonymity thresholds.</p>
+              </div>
+              <a href="error.html" class="btn btn-secondary btn-sm">Update Donor Profile</a>
+            </div>
+
+            <div class="protocol-config-list">
+              <div class="config-row">
+                <div class="config-text">
+                  <strong class="config-title">Automatic Quarterly Allocation</strong>
+                  <span class="config-sub">Schedule recurring direct field deployment tranches.</span>
+                </div>
+                <a href="error.html" class="btn btn-outline-dark btn-sm">Configured: $5,000 / Quarter</a>
+              </div>
+
+              <div class="config-row">
+                <div class="config-text">
+                  <strong class="config-title">Donor Ledger Visibility</strong>
+                  <span class="config-sub">Choose whether your name is displayed on the public audit block.</span>
+                </div>
+                <a href="error.html" class="btn btn-outline-dark btn-sm">Set to: Anonymous ID Only</a>
+              </div>
+
+              <div class="config-row">
+                <div class="config-text">
+                  <strong class="config-title">Emergency Shock Relief Override</strong>
+                  <span class="config-sub">Authorize immediate 10% diversion into 48-hour climate relief during disaster events.</span>
+                </div>
+                <a href="error.html" class="btn btn-outline-dark btn-sm">Status: Active & Authorized</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+<script>
+
+// ==========================================================================
+// Universal Dashboard Engine (Admin & Client Dashboard Support)
+// ==========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Hydrate User Email from Login Session
+  const storedEmail = localStorage.getItem("userEmail") || "verified.steward@earthtrust.org";
+  
+  // Hydrate Admin Elements (if present)
+  const adminSidebarEmail = document.getElementById("sidebarDisplayEmail");
+  const adminTopbarEmail = document.getElementById("topbarDisplayEmail");
+  if (adminSidebarEmail) adminSidebarEmail.textContent = storedEmail;
+  if (adminTopbarEmail) adminTopbarEmail.textContent = storedEmail;
+
+  // Hydrate Client Elements (if present)
+  const clientSidebarEmail = document.getElementById("clientSidebarDisplayEmail");
+  const clientTopbarEmail = document.getElementById("clientTopbarDisplayEmail");
+  if (clientSidebarEmail) clientSidebarEmail.textContent = storedEmail;
+  if (clientTopbarEmail) clientTopbarEmail.textContent = storedEmail;
+
+  // 2. Mobile Hamburger Menu & Background Scroll Lock
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const drawerCloseBtn = document.getElementById("drawerCloseBtn");
+  const sidebar = document.getElementById("dashboardSidebar");
+  const backdrop = document.getElementById("sidebarBackdrop");
+
+  function openSidebar() {
+    if (!sidebar || !backdrop) return;
+    sidebar.classList.add("is-open");
+    backdrop.classList.add("is-active");
+    if (hamburgerBtn) {
+      hamburgerBtn.classList.add("is-active");
+      hamburgerBtn.setAttribute("aria-expanded", "true");
+    }
+    // Lock background scroll
+    document.body.classList.add("scroll-locked");
+  }
+
+  function closeSidebar() {
+    if (!sidebar || !backdrop) return;
+    sidebar.classList.remove("is-open");
+    backdrop.classList.remove("is-active");
+    if (hamburgerBtn) {
+      hamburgerBtn.classList.remove("is-active");
+      hamburgerBtn.setAttribute("aria-expanded", "false");
+    }
+    // Restore background scroll
+    document.body.classList.remove("scroll-locked");
+  }
+
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener("click", () => {
+      if (sidebar.classList.contains("is-open")) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    });
+  }
+
+  if (drawerCloseBtn) drawerCloseBtn.addEventListener("click", closeSidebar);
+  if (backdrop) backdrop.addEventListener("click", closeSidebar);
+
+  // 3. Tabbed Content Views Switching Engine
+  const navButtons = document.querySelectorAll(".dash-nav-btn");
+  const views = document.querySelectorAll(".dashboard-view");
+  const viewHeaderTitle = document.getElementById("viewHeaderTitle") || document.getElementById("clientViewHeaderTitle");
+
+  navButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetViewId = btn.getAttribute("data-view");
+      const navLabel = btn.querySelector("span") ? btn.querySelector("span").textContent : "Console";
+
+      // Highlight active button
+      navButtons.forEach((b) => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+
+      // Switch active view pane
+      views.forEach((v) => {
+        v.classList.remove("is-active");
+        if (v.id === targetViewId) {
+          v.classList.add("is-active");
+        }
+      });
+
+      // Update breadcrumb title
+      if (viewHeaderTitle) {
+        viewHeaderTitle.textContent = navLabel;
+      }
+
+      // Close mobile drawer after link is pressed
+      if (window.innerWidth <= 768) {
+        closeSidebar();
+      }
+    });
+  });
+
+  // Re-enable scroll if resized to desktop dimensions
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      closeSidebar();
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>

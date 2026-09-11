@@ -1,0 +1,319 @@
+:root {
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+.error-page-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background-color: var(--bg-main);
+  overflow: hidden;
+}
+
+.error-aurora-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 0;
+  animation: floatAmbient 12s infinite alternate ease-in-out;
+}
+
+.glow-1 {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, var(--primary-light) 0%, rgba(31, 122, 86, 0.08) 70%, transparent 100%);
+  top: 10%;
+  left: 15%;
+}
+
+.glow-2 {
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(224, 109, 83, 0.12) 0%, rgba(232, 168, 56, 0.08) 60%, transparent 100%);
+  bottom: 10%;
+  right: 15%;
+  animation-duration: 15s;
+}
+
+.error-content-card {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  padding: 4.5rem 3.5rem;
+  box-shadow: 0 20px 50px -15px rgba(30, 41, 59, 0.06);
+  opacity: 1;
+  visibility: visible;
+}
+
+.error-visual {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  user-select: none;
+}
+
+.digit {
+  font-family: var(--font-heading);
+  font-size: 8.5rem;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.compass-orb {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orb-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed var(--primary);
+  pointer-events: none;
+}
+
+.ring-outer {
+  width: 100%;
+  height: 100%;
+  border-color: rgba(31, 122, 86, 0.35);
+  animation: spinSlow 20s linear infinite;
+}
+
+.ring-inner {
+  width: 82%;
+  height: 82%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(224, 109, 83, 0.25);
+  animation: spinReverse 14s linear infinite;
+}
+
+.orb-core {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bg-surface) 0%, var(--primary-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(31, 122, 86, 0.2);
+  border: 1px solid var(--border);
+}
+
+.compass-needle {
+  font-size: 2rem;
+  color: var(--secondary);
+  animation: needleDrift 4s ease-in-out infinite alternate;
+}
+
+.error-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  padding: 0.45rem 1.15rem;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(31, 122, 86, 0.15);
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(31, 122, 86, 0.2);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+.badge-text {
+  font-size: 0.825rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.error-title {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.error-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+}
+
+.error-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+.quick-assist {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quick-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.quick-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: 9999px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+}
+
+.pill-link i {
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+.pill-link:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes needleDrift {
+  0% { transform: rotate(-35deg) scale(1); }
+  50% { transform: rotate(45deg) scale(1.05); }
+  100% { transform: rotate(-10deg) scale(1); }
+}
+
+@keyframes floatAmbient {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(40px, -30px) scale(1.12); }
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+@media (max-width: 768px) {
+  .error-page-wrapper {
+    padding: 2.5rem 1rem;
+  }
+
+  .error-content-card {
+    padding: 3rem 1.5rem;
+    border-radius: 24px;
+  }
+
+  .digit {
+    font-size: 5.5rem;
+  }
+
+  .compass-orb {
+    width: 80px;
+    height: 80px;
+  }
+
+  .orb-core {
+    width: 48px;
+    height: 48px;
+  }
+
+  .compass-needle {
+    font-size: 1.4rem;
+  }
+
+  .error-title {
+    font-size: 2rem;
+  }
+
+  .error-description {
+    font-size: 0.975rem;
+    margin-bottom: 2rem;
+  }
+
+  .error-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.85rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .error-actions .btn {
+    width: 100%;
+  }
+
+  .quick-pills {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .pill-link {
+    width: 100%;
+    justify-content: center;
+  }
+}

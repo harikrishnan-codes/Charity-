@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Identity & Stewardship Portal | EarthTrust</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="auth.css"/>
+
+
+</head>
+<body class="auth-page-body">
+
+  <section class="auth-split-wrapper">
+    
+    <!-- Left Column: Cinematic Background Video Deck -->
+    <div class="auth-video-col">
+      <div class="auth-video-container">
+        <video autoplay muted loop playsinline class="auth-bg-video">
+          <source src="./assets/hero.mp4" type="video/mp4">
+        </video>
+        <div class="auth-video-overlay"></div>
+        <div class="auth-video-mesh"></div>
+      </div>
+
+      <div class="auth-video-content">
+        <!-- Top Row with Brand Badge & Go Back Button -->
+        <div class="auth-top-nav">
+          <a href="index.html" class="auth-brand-badge">
+            <i class="fa-solid fa-seedling"></i>
+            <span>EarthTrust Portal</span>
+          </a>
+
+          <!-- Go Back Button -->
+          <a href="index.html" class="auth-back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Go Back</span>
+          </a>
+        </div>
+
+        <div class="auth-editorial-stack">
+          <span class="auth-kicker-tag">Decentralized Stewardship</span>
+          <h1 class="auth-editorial-title">Cryptographic Custody of Living Earth</h1>
+          <p class="auth-editorial-desc">
+            Access direct hydrological telemetries, native seed vaults, and autonomous land charters secured by zero-intermediary governance ledgers.
+          </p>
+        </div>
+
+        <div class="auth-trust-strip">
+          <div class="auth-trust-node">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>256-Bit Multi-Sig Access</span>
+          </div>
+          <div class="auth-trust-sep"></div>
+          <div class="auth-trust-node">
+            <i class="fa-solid fa-link"></i>
+            <span>Role-Based Telemetry</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Multi-Pane Forms -->
+    <div class="auth-form-col">
+      <div class="auth-form-shell">
+
+        <!-- Mobile Inline Back Button -->
+        <div class="mobile-back-bar">
+          <a href="index.html" class="mobile-back-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Back to Home</span>
+          </a>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- PANE 1: SIGNUP (INITIAL VISIBLE STATE)                       -->
+        <!-- ============================================================= -->
+        <div class="auth-pane is-active" id="pane-signup">
+          <div class="pane-header">
+            <span class="pane-kicker">New Protocol Enrollment</span>
+            <h2 class="pane-title">Create Identity Account</h2>
+            <p class="pane-subtitle">Register to verify autonomous allocations and access live ground feeds.</p>
+          </div>
+
+          <form id="signupForm" class="auth-form" novalidate>
+            
+            <!-- User Types: Admin and Client (Custom Chips) -->
+            <div class="form-group">
+              <label class="form-label">Account Privilege Tier <span class="req">*</span></label>
+              <div class="role-chip-group" id="signupRoleGroup">
+                <button type="button" class="role-chip is-active" data-role="client">
+                  <i class="fa-solid fa-user"></i>
+                  <span>Client Donor</span>
+                </button>
+                <button type="button" class="role-chip" data-role="admin">
+                  <i class="fa-solid fa-user-shield"></i>
+                  <span>Admin Field Trustee</span>
+                </button>
+              </div>
+              <input type="hidden" id="signupRole" value="client" />
+            </div>
+
+            <!-- Full Name (Alphabets only) -->
+            <div class="form-group" id="signup-group-name">
+              <label class="form-label" for="signupName">Full Legal Name <span class="req">*</span></label>
+              <div class="auth-input-shell">
+                <i class="fa-regular fa-user auth-field-icon"></i>
+                <input type="text" id="signupName" class="auth-input" placeholder="e.g. Raman Harikrishnan" autocomplete="name" />
+              </div>
+              <span class="auth-error-msg" id="signup-error-name">Name must contain alphabets and spaces only.</span>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group" id="signup-group-email">
+              <label class="form-label" for="signupEmail">Identity Email <span class="req">*</span></label>
+              <div class="auth-input-shell">
+                <i class="fa-regular fa-envelope auth-field-icon"></i>
+                <input type="email" id="signupEmail" class="auth-input" placeholder="steward@domain.com" autocomplete="email" />
+              </div>
+              <span class="auth-error-msg" id="signup-error-email">Please enter a valid email format (name@domain.com).</span>
+            </div>
+
+            <!-- Password with Custom Eye Toggle (Min 6 chars) -->
+            <div class="form-group" id="signup-group-password">
+              <label class="form-label" for="signupPassword">Security Passkey <span class="req">*</span></label>
+              <div class="auth-input-shell">
+                <i class="fa-solid fa-lock auth-field-icon"></i>
+                <input type="password" id="signupPassword" class="auth-input has-toggle" placeholder="Minimum 6 characters" autocomplete="new-password" />
+                <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+              </div>
+              <span class="auth-error-msg" id="signup-error-password">Passkey must contain at least 6 characters.</span>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-primary auth-submit-btn" id="signupSubmitBtn">
+              <span class="btn-text">Complete Verification</span>
+              <span class="btn-icon-wrapper"><i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+          </form>
+
+          <div class="pane-footer">
+            <span>Already have an identity passkey?</span>
+            <button type="button" class="switch-pane-link" data-target="pane-login">Sign In Instead</button>
+          </div>
+        </div>
+
+
+        <!-- ============================================================= -->
+        <!-- PANE 2: LOGIN / SIGNIN (WITH USER TYPE SELECTOR & EYE TOGGLE) -->
+        <!-- ============================================================= -->
+        <div class="auth-pane" id="pane-login">
+          <div class="pane-header">
+            <span class="pane-kicker">Secure Gateway</span>
+            <h2 class="pane-title">Access Console</h2>
+            <p class="pane-subtitle">Choose your portal access role and enter authorized credentials.</p>
+          </div>
+
+          <form id="loginForm" class="auth-form" novalidate>
+            
+            <!-- User Types on Signin Page (Admin & Client) -->
+            <div class="form-group">
+              <label class="form-label">Signing In As <span class="req">*</span></label>
+              <div class="role-chip-group" id="loginRoleGroup">
+                <button type="button" class="role-chip is-active" data-role="client">
+                  <i class="fa-solid fa-user"></i>
+                  <span>Client Donor</span>
+                </button>
+                <button type="button" class="role-chip" data-role="admin">
+                  <i class="fa-solid fa-user-shield"></i>
+                  <span>Admin Field Trustee</span>
+                </button>
+              </div>
+              <input type="hidden" id="loginRole" value="client" />
+            </div>
+
+            <!-- Legal Name (Alphabets only) -->
+            <div class="form-group" id="login-group-name">
+              <label class="form-label" for="loginName">Registered Name <span class="req">*</span></label>
+              <div class="auth-input-shell">
+                <i class="fa-regular fa-user auth-field-icon"></i>
+                <input type="text" id="loginName" class="auth-input" placeholder="e.g. Raman Harikrishnan" autocomplete="name" />
+              </div>
+              <span class="auth-error-msg" id="login-error-name">Name must contain alphabets and spaces only.</span>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group" id="login-group-email">
+              <label class="form-label" for="loginEmail">Account Email <span class="req">*</span></label>
+              <div class="auth-input-shell">
+                <i class="fa-regular fa-envelope auth-field-icon"></i>
+                <input type="email" id="loginEmail" class="auth-input" placeholder="steward@domain.com" autocomplete="email" />
+              </div>
+              <span class="auth-error-msg" id="login-error-email">Please enter a valid email format.</span>
+            </div>
+
+            <!-- Password with Eye Toggle -->
+            <div class="form-group" id="login-group-password">
+              <div class="label-split-row">
+                <label class="form-label" for="loginPassword">Passkey <span class="req">*</span></label>
+                <button type="button" class="switch-pane-link link-muted" data-target="pane-forgot">Forgot Passkey?</button>
+              </div>
+              <div class="auth-input-shell">
+                <i class="fa-solid fa-lock auth-field-icon"></i>
+                <input type="password" id="loginPassword" class="auth-input has-toggle" placeholder="Minimum 6 characters" autocomplete="current-password" />
+                <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+              </div>
+              <span class="auth-error-msg" id="login-error-password">Passkey must contain at least 6 characters.</span>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-primary auth-submit-btn" id="loginSubmitBtn">
+              <span class="btn-text">Authenticate & Enter</span>
+              <span class="btn-icon-wrapper"><i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+          </form>
+
+          <div class="pane-footer">
+            <span>Need a certified identity pass?</span>
+            <button type="button" class="switch-pane-link" data-target="pane-signup">Enroll Here</button>
+          </div>
+        </div>
+
+
+        <!-- ============================================================= -->
+        <!-- PANE 3: FORGOT PASSWORD (VALIDATE & REDIRECT TO error.html)   -->
+        <!-- ============================================================= -->
+        <div class="auth-pane" id="pane-forgot">
+          <div class="pane-header">
+            <span class="pane-kicker">Cryptographic Recovery</span>
+            <h2 class="pane-title">Reset Passkey</h2>
+            <p class="pane-subtitle">Enter your registered email. Once validated, system transfers to recovery docket.</p>
+          </div>
+
+          <form id="forgotForm" class="auth-form" novalidate>
+            <!-- Email Address -->
+            <div class="form-group" id="forgot-group-email">
+              <label class="form-label" for="forgotEmail">Registered Identity Email <span class="req">*</span></label>
+              <div class="auth-input-shell">
+                <i class="fa-regular fa-envelope auth-field-icon"></i>
+                <input type="email" id="forgotEmail" class="auth-input" placeholder="steward@domain.com" autocomplete="email" />
+              </div>
+              <span class="auth-error-msg" id="forgot-error-email">Please enter a valid email format.</span>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-secondary auth-submit-btn" id="forgotSubmitBtn">
+              <span class="btn-text">Transmit Reset Docket</span>
+              <span class="btn-icon-wrapper"><i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+          </form>
+
+          <div class="pane-footer">
+            <span>Remembered your credentials?</span>
+            <button type="button" class="switch-pane-link" data-target="pane-login">Back to Sign In</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+<script>
+// ==========================================================================
+// Direct Dashboard Redirection for Both Signup & Signin Forms
+// ==========================================================================
+(() => {
+  // 1. Pane Switching Logic
+  const switchLinks = document.querySelectorAll(".switch-pane-link");
+  const panes = document.querySelectorAll(".auth-pane");
+
+  function switchPane(targetPaneId) {
+    panes.forEach((pane) => pane.classList.remove("is-active"));
+    const target = document.getElementById(targetPaneId);
+    if (target) {
+      target.classList.add("is-active");
+    }
+  }
+
+  switchLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const targetId = link.getAttribute("data-target");
+      if (targetId) switchPane(targetId);
+    });
+  });
+
+  // 2. Custom Role Selector Handler (Admin vs Client Chips)
+  function setupRoleChips(containerId, inputId) {
+    const container = document.getElementById(containerId);
+    const hiddenInput = document.getElementById(inputId);
+    if (!container || !hiddenInput) return;
+
+    const chips = container.querySelectorAll(".role-chip");
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        chips.forEach((c) => c.classList.remove("is-active"));
+        chip.classList.add("is-active");
+        hiddenInput.value = chip.getAttribute("data-role");
+      });
+    });
+  }
+
+  setupRoleChips("signupRoleGroup", "signupRole");
+  setupRoleChips("loginRoleGroup", "loginRole");
+
+  // 3. Password Eye Visibility Toggle (Show / Hide)
+  const toggleButtons = document.querySelectorAll(".password-toggle-btn");
+
+  toggleButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const input = btn.parentElement.querySelector(".auth-input");
+      const icon = btn.querySelector("i");
+      if (input.type === "password") {
+        input.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+      } else {
+        input.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+      }
+    });
+  });
+
+  // 4. Strict Regex Checkers & Input Validation Helpers
+  const nameRegex = /^[A-Za-z\s]{2,50}$/; // Alphabets and spaces only
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Strict email
+
+  function validateField(inputEl, groupId, testFn) {
+    const group = document.getElementById(groupId);
+    if (!group || !inputEl) return false;
+    const isValid = testFn(inputEl.value.trim());
+
+    if (!isValid) {
+      group.classList.add("has-error");
+      return false;
+    } else {
+      group.classList.remove("has-error");
+      return true;
+    }
+  }
+
+  // Clear error styles dynamically while typing
+  document.querySelectorAll(".auth-input").forEach((input) => {
+    input.addEventListener("input", () => {
+      const group = input.closest(".form-group");
+      if (group && group.classList.contains("has-error")) {
+        group.classList.remove("has-error");
+      }
+    });
+  });
+
+  // Helper function to perform role-based redirect
+  function redirectToDashboard(role) {
+    if (role === "admin") {
+      window.location.href = "admin.html";
+    } else {
+      window.location.href = "client.html";
+    }
+  }
+
+  // ==========================================================================
+  // 1. CREATE ACCOUNT (SIGNUP): VALIDATE & DIRECT DASHBOARD REDIRECT
+  // ==========================================================================
+  const signupForm = document.getElementById("signupForm");
+  if (signupForm) {
+    signupForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const nameEl = document.getElementById("signupName");
+      const emailEl = document.getElementById("signupEmail");
+      const passEl = document.getElementById("signupPassword");
+      const signupRoleInput = document.getElementById("signupRole");
+
+      const isNameValid = validateField(nameEl, "signup-group-name", (val) => nameRegex.test(val));
+      const isEmailValid = validateField(emailEl, "signup-group-email", (val) => emailRegex.test(val));
+      const isPassValid = validateField(passEl, "signup-group-password", (val) => val.length >= 6);
+
+      if (isNameValid && isEmailValid && isPassValid) {
+        const chosenRole = signupRoleInput ? signupRoleInput.value : "client";
+        const emailVal = emailEl.value.trim();
+        const nameVal = nameEl.value.trim();
+
+        // Save email and role to localStorage for the dashboard to display
+        localStorage.setItem("userEmail", emailVal);
+        localStorage.setItem("userRole", chosenRole);
+        localStorage.setItem("userName", nameVal);
+
+        const submitBtn = document.getElementById("signupSubmitBtn");
+        submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Redirecting to Dashboard...</span>`;
+        submitBtn.disabled = true;
+
+        // Auto-delete all form inputs
+        signupForm.reset();
+
+        // Redirect directly to the chosen role dashboard
+        setTimeout(() => {
+          redirectToDashboard(chosenRole);
+        }, 600);
+      }
+    });
+  }
+
+  // ==========================================================================
+  // 2. SIGN IN (LOGIN): VALIDATE & DIRECT DASHBOARD REDIRECT
+  // ==========================================================================
+  const loginForm = document.getElementById("loginForm");
+  if (loginForm) {
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const nameEl = document.getElementById("loginName");
+      const emailEl = document.getElementById("loginEmail");
+      const passEl = document.getElementById("loginPassword");
+      const loginRoleInput = document.getElementById("loginRole");
+
+      const isNameValid = validateField(nameEl, "login-group-name", (val) => nameRegex.test(val));
+      const isEmailValid = validateField(emailEl, "login-group-email", (val) => emailRegex.test(val));
+      const isPassValid = validateField(passEl, "login-group-password", (val) => val.length >= 6);
+
+      if (isNameValid && isEmailValid && isPassValid) {
+        const selectedRole = loginRoleInput ? loginRoleInput.value : "client";
+        const loginEmail = emailEl.value.trim();
+        const loginName = nameEl.value.trim();
+
+        // Save email and role to localStorage for the dashboard to display
+        localStorage.setItem("userEmail", loginEmail);
+        localStorage.setItem("userRole", selectedRole);
+        localStorage.setItem("userName", loginName);
+
+        const submitBtn = document.getElementById("loginSubmitBtn");
+        submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Authenticating & Redirecting...</span>`;
+        submitBtn.disabled = true;
+
+        // Auto-delete all form inputs
+        loginForm.reset();
+
+        // Redirect directly to the chosen role dashboard
+        setTimeout(() => {
+          redirectToDashboard(selectedRole);
+        }, 600);
+      }
+    });
+  }
+
+  // ==========================================================================
+  // 3. FORGOT PASSWORD: VALIDATE & REDIRECT TO error.html
+  // ==========================================================================
+  const forgotForm = document.getElementById("forgotForm");
+  if (forgotForm) {
+    forgotForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const emailEl = document.getElementById("forgotEmail");
+      const isEmailValid = validateField(emailEl, "forgot-group-email", (val) => emailRegex.test(val));
+
+      if (isEmailValid) {
+        const submitBtn = document.getElementById("forgotSubmitBtn");
+        submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Routing Recovery...</span>`;
+        submitBtn.disabled = true;
+
+        // Auto-delete forgot password inputs
+        forgotForm.reset();
+
+        setTimeout(() => {
+          window.location.href = "error.html";
+        }, 600);
+      }
+    });
+  }
+})();
+
+</script>
+
+</body>
+</html>

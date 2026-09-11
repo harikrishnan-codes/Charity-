@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charity Organization</title>
+
+  <link rel="icon" href="./assets/logo.webp">
+  <link rel="stylesheet" href="./root.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="about.css">
+
+
+  <!-- Google Fonts: Fraunces (Headings) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome 6 (Free Solid, Regular, Brands) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <img src="./assets/logo 16.webp" alt="logo" width="150px" height="50px">
+
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="service.html" class="nav-link">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="causes.html" class="nav-link">Causes</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+
+        <div class="nav-mobile-cta">
+          <a href="donate.html" class="btn btn-secondary">
+            <span class="btn-text">Donate Now</span>
+            <span class="btn-icon-wrapper">
+              <i class="fa-solid fa-heart"></i>
+            </span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="donate.html" class="btn btn-secondary header-donate-btn">
+          <span class="btn-text">Donate Now</span>
+          <span class="btn-icon-wrapper">
+            <i class="fa-solid fa-heart"></i>
+          </span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navMenu"
+          aria-label="Toggle navigation menu">
+          <span class="bar bar-top"></span>
+          <span class="bar bar-mid"></span>
+          <span class="bar bar-bot"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+
+  <main>
+    <section class="about-hero-section">
+      <div class="about-hero-container">
+
+        <!-- Text & Content Column -->
+        <div class="about-hero-content">
+          <span class="about-hero-badge">
+            <i class="fa-solid fa-seedling"></i>
+            <span>Our Roots & Purpose</span>
+          </span>
+
+          <h1 class="about-hero-title">
+            Restoring Lands, Cultivating Futures Together
+          </h1>
+
+          <p class="about-hero-description">
+            Founded with a commitment to transparent grassroots stewardship, we unite local communities,
+            conservation ecologists, and dedicated benefactors to revitalize vulnerable ecosystems from the root up.
+          </p>
+
+          <div class="about-hero-actions">
+            <a href="causes.html" class="btn btn-primary">
+              <span class="btn-text">Explore Initiatives</span>
+              <span class="btn-icon-wrapper">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </a>
+
+            <a href="contact.html" class="btn btn-outline-dark">
+              <span class="btn-text">Meet Our Leaders</span>
+            </a>
+          </div>
+
+          <!-- Metrics Counters -->
+          <div class="about-hero-metrics">
+            <div class="metric-block">
+              <strong class="metric-num"><span data-counter="12">0</span>+</strong>
+              <span class="metric-name">Years Active</span>
+            </div>
+            <div class="metric-separator"></div>
+            <div class="metric-block">
+              <strong class="metric-num"><span data-counter="86">0</span>%</strong>
+              <span class="metric-name">Direct Field Funding</span>
+            </div>
+            <div class="metric-separator"></div>
+            <div class="metric-block">
+              <strong class="metric-num"><span data-counter="240">0</span>k</strong>
+              <span class="metric-name">Hectares Protected</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Multi-Image Visual Canvas -->
+        <div class="about-hero-visual">
+          <div class="image-wrapper image-primary-wrapper">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1000&q=80"
+              alt="Community hands holding young plant sapling" class="about-img-primary" />
+          </div>
+
+          <div class="image-wrapper image-secondary-wrapper">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
+              alt="Field director leading conservation team" class="about-img-secondary" />
+          </div>
+
+          <!-- Verified Seal Badge -->
+          <div class="floating-seal">
+            <div class="seal-inner">
+              <i class="fa-solid fa-award"></i>
+              <span>Verified 501(c)(3)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+ <section class="flip-mission-section">
+  <div class="flip-container">
+    <div class="flip-header">
+      <span class="flip-badge">
+        <i class="fa-solid fa-compass"></i>
+        <span>Core Tenets</span>
+      </span>
+      <h2 class="flip-heading">The Pillars That Direct Our Work</h2>
+      <p class="flip-subheading">
+        Hover each pillar to reveal concrete field protocols, audit ledgers, and direct action conduits.
+      </p>
+    </div>
+
+    <div class="flip-grid">
+      <!-- Card 01 -->
+      <div class="flip-card-item">
+        <div class="flip-card-inner">
+          <!-- Front Face -->
+          <div class="flip-face flip-front">
+            <div class="card-icon-box">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <span class="flip-step">Pillar 01</span>
+            <h3 class="flip-title">Bio-Diverse Seeding</h3>
+            <p class="flip-summary">Propagating endemic forest canopies to withstand acute drought patterns.</p>
+            <span class="flip-action-hint">
+              <span>View Field Protocols</span>
+              <i class="fa-solid fa-arrow-rotate-right"></i>
+            </span>
+          </div>
+
+          <!-- Back Face -->
+          <div class="flip-face flip-back">
+            <div>
+              <h4 class="flip-back-title">Root Operations</h4>
+              <ul class="flip-back-list">
+                <li>14 local micro-nurseries managed across southern districts.</li>
+                <li>Strict seed banking safeguarding 40+ native tree strains.</li>
+                <li>Zero synthetic fertilizers or invasive monoculture varieties.</li>
+              </ul>
+            </div>
+            
+            <div class="flip-back-footer">
+              <span class="back-metric">94% Survival</span>
+              <!-- Working Clickable Anchor Button -->
+              <a href="service.html#nurseries" class="btn-card-action">
+                <span>Deploy Seeds</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 02 -->
+      <div class="flip-card-item">
+        <div class="flip-card-inner">
+          <div class="flip-face flip-front">
+            <div class="card-icon-box">
+              <i class="fa-solid fa-hand-holding-droplet"></i>
+            </div>
+            <span class="flip-step">Pillar 02</span>
+            <h3 class="flip-title">Watershed Security</h3>
+            <p class="flip-summary">Designing sub-surface rainwater basins to feed communal water access.</p>
+            <span class="flip-action-hint">
+              <span>View Water Metrics</span>
+              <i class="fa-solid fa-arrow-rotate-right"></i>
+            </span>
+          </div>
+
+          <div class="flip-face flip-back">
+            <div>
+              <h4 class="flip-back-title">Hydrology Focus</h4>
+              <ul class="flip-back-list">
+                <li>Reconstructed 18 gravity-fed natural catchment ponds.</li>
+                <li>Continuous flow telemetry monitors ground salinity daily.</li>
+                <li>Filters potable drinking water for 12,000+ residents.</li>
+              </ul>
+            </div>
+
+            <div class="flip-back-footer">
+              <span class="back-metric">420kL Stored</span>
+              <a href="service.html#water" class="btn-card-action">
+                <span>Inspect Basin</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 03 -->
+      <div class="flip-card-item">
+        <div class="flip-card-inner">
+          <div class="flip-face flip-front">
+            <div class="card-icon-box">
+              <i class="fa-solid fa-users-gear"></i>
+            </div>
+            <span class="flip-step">Pillar 03</span>
+            <h3 class="flip-title">Village Leadership</h3>
+            <p class="flip-summary">Transferring complete stewardship, monitoring, and rights to resident councils.</p>
+            <span class="flip-action-hint">
+              <span>View Governance</span>
+              <i class="fa-solid fa-arrow-rotate-right"></i>
+            </span>
+          </div>
+
+          <div class="flip-face flip-back">
+            <div>
+              <h4 class="flip-back-title">Civic Handover</h4>
+              <ul class="flip-back-list">
+                <li>100% locally led maintenance and management cadres.</li>
+                <li>Living wage guarantees paid directly through open ledger.</li>
+                <li>Vocational ecology certifications for regional youth.</li>
+              </ul>
+            </div>
+
+            <div class="flip-back-footer">
+              <span class="back-metric">62 Councils</span>
+              <a href="about.html" class="btn-card-action">
+                <span>Audit Compact</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 04 -->
+      <div class="flip-card-item">
+        <div class="flip-card-inner">
+          <div class="flip-face flip-front">
+            <div class="card-icon-box">
+              <i class="fa-solid fa-file-shield"></i>
+            </div>
+            <span class="flip-step">Pillar 04</span>
+            <h3 class="flip-title">Open-Ledger Trust</h3>
+            <p class="flip-summary">Public balance sheets verify that contributions reach direct land operations.</p>
+            <span class="flip-action-hint">
+              <span>View Audit System</span>
+              <i class="fa-solid fa-arrow-rotate-right"></i>
+            </span>
+          </div>
+
+          <div class="flip-face flip-back">
+            <div>
+              <h4 class="flip-back-title">Fiscal Integrity</h4>
+              <ul class="flip-back-list">
+                <li>Itemized quarterly reporting hosted openly online.</li>
+                <li>Third-party annual audits conducted by global standard.</li>
+                <li>Strict cap keeping overhead under 14% across programs.</li>
+              </ul>
+            </div>
+
+            <div class="flip-back-footer">
+              <span class="back-metric">86% Direct</span>
+              <a href="donate.html" class="btn-card-action">
+                <span>View Ledger</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  <section class="steward-manifesto-section">
+    <div class="steward-container">
+      <div class="steward-grid">
+
+        <!-- Sticky Editorial Narrative (Left Column) -->
+        <div class="steward-sticky-column">
+          <span class="steward-badge">
+            <i class="fa-solid fa-feather-pointed"></i>
+            <span>The Sovereign Creed</span>
+          </span>
+          <h2 class="steward-heading">Rooted In Living Accountability</h2>
+          <p class="steward-narrative">
+            Conservation without localized autonomy is merely preservation on borrowed time. We operate on a covenant of
+            deep field tenure—shifting governance, technological tooling, and ecological assets directly into the hands
+            of ancestral custodians.
+          </p>
+
+          <div class="steward-citation">
+            <blockquote class="citation-text">
+              “True restoration begins when the ledger is visible to the village, and the forest canopy belongs to those
+              who nurture its soil.”
+            </blockquote>
+            <div class="citation-author">
+              <cite class="author-name">Dr. Aris Thorne</cite>
+              <span class="author-title">Principal Ecological Economist</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tiered Parchment Framework (Right Column) -->
+        <div class="steward-cards-column">
+
+          <!-- Manifesto Card 01 -->
+          <article class="manifesto-card">
+            <div class="manifesto-card-header">
+              <span class="manifesto-index">I</span>
+              <span class="manifesto-domain">Tenure & Autonomy</span>
+            </div>
+            <h3 class="manifesto-title">Irrevocable Land Stewardship</h3>
+            <p class="manifesto-copy">
+              Every nursery, water catchment basin, and agroforestry corridor established under our charter transitions
+              into legally protected community land trusts within 36 months of deployment.
+            </p>
+            <div class="manifesto-ledger">
+              <div class="ledger-point">
+                <span class="ledger-figure">100%</span>
+                <span class="ledger-label">Community Co-Ownership</span>
+              </div>
+              <div class="ledger-point">
+                <span class="ledger-figure">Zero</span>
+                <span class="ledger-label">Corporate Extraction</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Manifesto Card 02 -->
+          <article class="manifesto-card">
+            <div class="manifesto-card-header">
+              <span class="manifesto-index">II</span>
+              <span class="manifesto-domain">Radical Fiscal Audit</span>
+            </div>
+            <h3 class="manifesto-title">Cryptographic Open-Ledger Dispatches</h3>
+            <p class="manifesto-copy">
+              Disbursements to seed banks, ranger personnel, and solar aquifer grids are timestamped on decentralized
+              public registries—eliminating intermediaries and ensuring direct field capital routing.
+            </p>
+            <div class="manifesto-ledger">
+              <div class="ledger-point">
+                <span class="ledger-figure">86.4%</span>
+                <span class="ledger-label">Direct Field Allocation</span>
+              </div>
+              <div class="ledger-point">
+                <span class="ledger-figure">Quarterly</span>
+                <span class="ledger-label">Independent Audits</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Manifesto Card 03 -->
+          <article class="manifesto-card">
+            <div class="manifesto-card-header">
+              <span class="manifesto-index">III</span>
+              <span class="manifesto-domain">Endemic Resilience</span>
+            </div>
+            <h3 class="manifesto-title">Biocentric Monoculture Prohibition</h3>
+            <p class="manifesto-copy">
+              We reject high-yield, single-species carbon offsets. All restoration protocols require diverse canopy
+              strata, indigenous mycorrhizal inoculants, and native biodiversity thresholds.
+            </p>
+            <div class="manifesto-ledger">
+              <div class="ledger-point">
+                <span class="ledger-figure">40+</span>
+                <span class="ledger-label">Native Species Minimum</span>
+              </div>
+              <div class="ledger-point">
+                <span class="ledger-figure">94.2%</span>
+                <span class="ledger-label">5-Year Survival Index</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <section class="video-manifesto-section">
+    <!-- HTML5 Background Video Layer -->
+    <div class="video-backdrop-wrapper" aria-hidden="true">
+      <video class="backdrop-video" autoplay muted loop playsinline
+        poster="https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1920&q=80">
+        <source src="./assets/video 1.mp4" type="video/mp4" />
+      </video>
+      <div class="video-overlay-tint"></div>
+      <div class="video-overlay-grain"></div>
+    </div>
+
+    <!-- Content Foreground -->
+    <div class="video-manifesto-container">
+      <div class="video-manifesto-card">
+        <span class="video-badge">
+          <i class="fa-solid fa-satellite-dish"></i>
+          <span>Field Telemetry</span>
+        </span>
+
+        <h2 class="video-heading">Witness Every Acre In Real-Time</h2>
+
+        <p class="video-lead">
+          We bridge ecological field stations, drone lidar scans, and open community monitoring directly to public
+          dashboards. Observe the forest canopy regenerating layer by layer.
+        </p>
+
+        <!-- Key Milestones Strip -->
+        <div class="video-stats-strip">
+          <div class="video-stat-item">
+            <strong class="stat-number">24/7</strong>
+            <span class="stat-caption">Canopy Acoustic Sensing</span>
+          </div>
+          <div class="video-stat-divider"></div>
+          <div class="video-stat-item">
+            <strong class="stat-number">12</strong>
+            <span class="stat-caption">Active Drone Corridors</span>
+          </div>
+          <div class="video-stat-divider"></div>
+          <div class="video-stat-item">
+            <strong class="stat-number">0%</strong>
+            <span class="stat-caption">Extractive Interference</span>
+          </div>
+        </div>
+
+        <!-- Action Group -->
+        <div class="video-cta-group">
+          <a href="causes.html" class="btn btn-secondary">
+            <span class="btn-text">Explore Live Map</span>
+            <span class="btn-icon-wrapper">
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </a>
+
+          <a href="contact.html" class="btn btn-glass">
+            <span class="btn-text">Audit Field Feeds</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <section class="leadership-section">
+    <div class="leadership-container">
+      <div class="leadership-header">
+        <span class="leadership-badge">
+          <i class="fa-solid fa-compass"></i>
+          <span>Guardians of the Mission</span>
+        </span>
+        <h2 class="leadership-title">Guiding Every Acre With Purpose</h2>
+        <p class="leadership-subtitle">
+          Meet the ecologists, indigenous botanists, and operations directors ensuring that field pledges translate into
+          perpetual community ownership.
+        </p>
+      </div>
+
+      <div class="leadership-grid">
+        <!-- Leader 1 -->
+        <article class="leader-card">
+          <div class="leader-portrait-frame">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80"
+              alt="Dr. Aris Thorne" class="leader-photo" />
+            <span class="leader-tenure">8 Years Tenure</span>
+          </div>
+          <div class="leader-body">
+            <span class="leader-role">Chief Ecology Scientist</span>
+            <h3 class="leader-name">Dr. Aris Thorne</h3>
+            <p class="leader-bio">
+              Spearheading native seed provenance trials and mycorrhizal soil inoculation protocols across 62 highland
+              community councils.
+            </p>
+            <div class="leader-footer">
+              <span class="leader-milestone">
+                <i class="fa-solid fa-seedling"></i>
+                <span>40+ Endemic Strains</span>
+              </span>
+              <div class="leader-socials">
+                <a href="error.html" class="leader-link" aria-label="LinkedIn Profile"><i
+                    class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Leader 2 -->
+        <article class="leader-card">
+          <div class="leader-portrait-frame">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80"
+              alt="Elena Vance" class="leader-photo" />
+            <span class="leader-tenure">6 Years Tenure</span>
+          </div>
+          <div class="leader-body">
+            <span class="leader-role">Director of Community Land Trusts</span>
+            <h3 class="leader-name">Elena Vance</h3>
+            <p class="leader-bio">
+              Directing legal charters and civic land titling to guarantee that reforested corridors transfer to
+              resident stewardship without third-party encumbrance.
+            </p>
+            <div class="leader-footer">
+              <span class="leader-milestone">
+                <i class="fa-solid fa-landmark"></i>
+                <span>100% Civic Titling</span>
+              </span>
+              <div class="leader-socials">
+                <a href="error.html" class="leader-link" aria-label="LinkedIn Profile"><i
+                    class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Leader 3 -->
+        <article class="leader-card">
+          <div class="leader-portrait-frame">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80"
+              alt="Tariq Mansoor" class="leader-photo" />
+            <span class="leader-tenure">5 Years Tenure</span>
+          </div>
+          <div class="leader-body">
+            <span class="leader-role">Chief Hydrological Architect</span>
+            <h3 class="leader-name">Tariq Mansoor</h3>
+            <p class="leader-bio">
+              Pioneering gravity-fed aquifer catchment designs and solar telemetry basins that sustain regional
+              agricultural yields through deep droughts.
+            </p>
+            <div class="leader-footer">
+              <span class="leader-milestone">
+                <i class="fa-solid fa-droplet"></i>
+                <span>18 Catchments Active</span>
+              </span>
+              <div class="leader-socials">
+                <a href="error.html" class="leader-link" aria-label="LinkedIn Profile"><i
+                    class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <section class="about-cta-section">
+    <!-- Dynamic Ken Burns Zoom Background Deck -->
+    <div class="about-cta-ambient-bg" aria-hidden="true">
+      <div class="about-cta-zoom-image"
+        style="background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80');">
+      </div>
+      <div class="about-cta-gradient-overlay"></div>
+      <div class="about-cta-grain"></div>
+    </div>
+
+    <!-- Forefront Editorial Messaging & Actions -->
+    <div class="about-cta-container">
+      <div class="about-cta-card">
+        <span class="about-cta-badge">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+          <span>Take The Oath</span>
+        </span>
+
+        <h2 class="about-cta-headline">Stand With Us In Restoring Indigenous Earth</h2>
+
+        <p class="about-cta-description">
+          Whether by seeding community forest tracts, establishing automated solar aquifers, or financing open-ledger
+          field dispatches—your stewardship guarantees perpetual ecological independence.
+        </p>
+
+        <div class="about-cta-actions">
+          <a href="donate.html" class="btn btn-secondary">
+            <span class="btn-text">Support The Land Trust</span>
+            <span class="btn-icon-wrapper">
+              <i class="fa-solid fa-heart"></i>
+            </span>
+          </a>
+
+          <a href="contact.html" class="btn btn-outline-light">
+            <span class="btn-text">Partner As Benefactor</span>
+          </a>
+        </div>
+
+        <!-- Trust Badges Strip -->
+        <div class="about-cta-footer-metrics">
+          <div class="about-cta-metric-tag">
+            <span class="about-metric-dot"></span>
+            <span>100% Direct Field Routing</span>
+          </div>
+          <div class="about-cta-metric-tag">
+            <span class="about-metric-dot"></span>
+            <span>501(c)(3) Instant Deductibility</span>
+          </div>
+          <div class="about-cta-metric-tag">
+            <span class="about-metric-dot"></span>
+            <span>Quarterly Public Audits</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand-col">
+          <a href="index.html" class="brand-logo">
+            <img src="./assets/logo 16.webp" alt="logo" width="150px" height="50px">
+
+          </a>
+          <p class="footer-desc">
+            Dedicated to building sustainable communities, empowering underprivileged lives, and providing direct,
+            transparent support across the globe.
+          </p>
+          <div class="footer-socials">
+            <a href="error.html" class="social-link" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="error.html" class="social-link" aria-label="X (Twitter)">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="error.html" class="social-link" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="error.html" class="social-link" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="error.html" class="social-link" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="service.html" class="footer-link">Services</a></li>
+            <li><a href="causes.html" class="footer-link">Causes</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Programs</h4>
+          <ul class="footer-links">
+            <li><a href="service.html#education" class="footer-link">Child Education</a></li>
+            <li><a href="service.html#water" class="footer-link">Clean Water Initiative</a></li>
+            <li><a href="service.html#medical" class="footer-link">Medical Missions</a></li>
+            <li><a href="service.html#disaster" class="footer-link">Disaster Relief</a></li>
+            <li><a href="donate.html" class="footer-link">Monthly Giving</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Get Involved</h4>
+          <p class="footer-contact-text">Subscribe to our monthly impact briefing.</p>
+          <form class="footer-newsletter-form" id="newsletterForm" novalidate>
+            <div class="newsletter-input-group">
+              <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" class="footer-input"
+                autocomplete="email" />
+              <button type="submit" class="btn btn-primary footer-submit-btn">
+                <span class="btn-text">Join</span>
+                <span class="btn-icon-wrapper">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+              </button>
+            </div>
+            <span class="newsletter-error-msg" id="newsletterError" aria-live="polite"></span>
+          </form>
+          <div class="footer-meta-contact">
+            <span><i class="fa-solid fa-envelope"></i> contact@kindredcharity.org</span>
+            <span><i class="fa-solid fa-phone"></i> +1 (800) 456-7890</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Kindred Charity Organization. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="error.html" class="legal-link">Privacy Policy</a>
+          <a href="error.html" class="legal-link">Terms of Service</a>
+          <a href="error.html" class="legal-link">Annual Reports</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- GSAP ScrollTrigger Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- GSAP TextPlugin (Optional, for counters & typing effects) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+
+  <!-- GSAP Initialization Safeguard -->
+  <script>
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
+  </script>
+  <script src="script.js"></script>
+  <script src="about.js"></script>
+
+</body>
+
+</html>
