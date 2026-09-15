@@ -323,6 +323,7 @@
 @media (max-width: 768px) {
   .causes-intro-section {
     padding: 3.5rem 1.125rem 4.5rem;
+    margin-top: 50px;
   }
 
   .causes-intro-grid {

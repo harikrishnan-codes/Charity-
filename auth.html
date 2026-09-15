@@ -270,7 +270,7 @@
   <script src="script.js"></script>
 <script>
 // ==========================================================================
-// Direct Dashboard Redirection for Both Signup & Signin Forms
+// Authentication Controller: Signup -> Login -> Dashboard Workflow
 // ==========================================================================
 (() => {
   // 1. Pane Switching Logic
@@ -332,7 +332,7 @@
 
   // 4. Strict Regex Checkers & Input Validation Helpers
   const nameRegex = /^[A-Za-z\s]{2,50}$/; // Alphabets and spaces only
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Strict email
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Strict format
 
   function validateField(inputEl, groupId, testFn) {
     const group = document.getElementById(groupId);
@@ -358,17 +358,17 @@
     });
   });
 
-  // Helper function to perform role-based redirect
+  // Helper function to perform role-based dashboard redirection
   function redirectToDashboard(role) {
     if (role === "admin") {
-      window.location.href = "admin.html";
+      window.location.href = "admin.html"; 
     } else {
-      window.location.href = "client.html";
+      window.location.href = "client.html";  
     }
   }
 
   // ==========================================================================
-  // 1. CREATE ACCOUNT (SIGNUP): VALIDATE & DIRECT DASHBOARD REDIRECT
+  // 1. SIGNUP: VALIDATE -> AUTO-CLEAR -> SWITCH TO LOGIN PANE
   // ==========================================================================
   const signupForm = document.getElementById("signupForm");
   if (signupForm) {
@@ -389,28 +389,43 @@
         const emailVal = emailEl.value.trim();
         const nameVal = nameEl.value.trim();
 
-        // Save email and role to localStorage for the dashboard to display
+        // Save registered user credentials
         localStorage.setItem("userEmail", emailVal);
         localStorage.setItem("userRole", chosenRole);
         localStorage.setItem("userName", nameVal);
 
         const submitBtn = document.getElementById("signupSubmitBtn");
-        submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Redirecting to Dashboard...</span>`;
+        submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Creating Account...</span>`;
         submitBtn.disabled = true;
 
-        // Auto-delete all form inputs
-        signupForm.reset();
-
-        // Redirect directly to the chosen role dashboard
         setTimeout(() => {
-          redirectToDashboard(chosenRole);
+          // Auto-delete signup form inputs
+          signupForm.reset();
+          submitBtn.innerHTML = `<span class="btn-text">Complete Verification</span> <span class="btn-icon-wrapper"><i class="fa-solid fa-arrow-right"></i></span>`;
+          submitBtn.disabled = false;
+
+          // Transition to Login pane
+          switchPane("pane-login");
+
+          // Sync the user type chip on login page to match the signed-up role
+          const loginChips = document.querySelectorAll("#loginRoleGroup .role-chip");
+          loginChips.forEach((chip) => {
+            const role = chip.getAttribute("data-role");
+            chip.classList.toggle("is-active", role === chosenRole);
+          });
+          const loginRoleInput = document.getElementById("loginRole");
+          if (loginRoleInput) loginRoleInput.value = chosenRole;
+
+          // Pre-populate registered email on the login pane
+          const loginEmailEl = document.getElementById("loginEmail");
+          if (loginEmailEl) loginEmailEl.value = emailVal;
         }, 600);
       }
     });
   }
 
   // ==========================================================================
-  // 2. SIGN IN (LOGIN): VALIDATE & DIRECT DASHBOARD REDIRECT
+  // 2. LOGIN: VALIDATE -> AUTO-CLEAR -> REDIRECT TO ROLE DASHBOARD
   // ==========================================================================
   const loginForm = document.getElementById("loginForm");
   if (loginForm) {
@@ -431,19 +446,18 @@
         const loginEmail = emailEl.value.trim();
         const loginName = nameEl.value.trim();
 
-        // Save email and role to localStorage for the dashboard to display
+        // Update localStorage with the exact email used during this login
         localStorage.setItem("userEmail", loginEmail);
         localStorage.setItem("userRole", selectedRole);
         localStorage.setItem("userName", loginName);
 
         const submitBtn = document.getElementById("loginSubmitBtn");
-        submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Authenticating & Redirecting...</span>`;
+        submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Authenticating...</span>`;
         submitBtn.disabled = true;
 
-        // Auto-delete all form inputs
+        // Auto-delete login form inputs
         loginForm.reset();
 
-        // Redirect directly to the chosen role dashboard
         setTimeout(() => {
           redirectToDashboard(selectedRole);
         }, 600);
@@ -452,7 +466,7 @@
   }
 
   // ==========================================================================
-  // 3. FORGOT PASSWORD: VALIDATE & REDIRECT TO error.html
+  // 3. FORGOT PASSWORD: VALIDATE -> AUTO-CLEAR -> REDIRECT TO error.html
   // ==========================================================================
   const forgotForm = document.getElementById("forgotForm");
   if (forgotForm) {
@@ -467,7 +481,7 @@
         submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Routing Recovery...</span>`;
         submitBtn.disabled = true;
 
-        // Auto-delete forgot password inputs
+        // Auto-delete input
         forgotForm.reset();
 
         setTimeout(() => {
@@ -477,7 +491,6 @@
     });
   }
 })();
-
 </script>
 
 </body>

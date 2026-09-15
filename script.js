@@ -110,10 +110,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     clearError();
-    window.location.href = "error.html";
+
+     form.reset();
+
+     setTimeout(() => {
+      window.location.href = "error.html";
+    }, 200);
   });
 });
 
+ window.addEventListener("pageshow", () => {
+  const form = document.getElementById("newsletterForm");
+  if (form) {
+    form.reset();
+  }
+});
 
 
 

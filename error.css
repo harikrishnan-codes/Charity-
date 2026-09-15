@@ -58,6 +58,19 @@
   visibility: visible;
 }
 
+.stackly {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1.5rem auto;  
+  text-align: center;
+}
+
+.stackly img {
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
 .error-visual {
   display: inline-flex;
   align-items: center;
